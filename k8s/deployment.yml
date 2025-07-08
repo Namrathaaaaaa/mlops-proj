@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fruits-classifier-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: fruits-classifier-app
+  template:
+    metadata:
+      labels:
+        app: fruits-classifier-app
+    spec:
+      containers:
+      - name: fruits-classifier
+        image: namratha3/fruit-classifier:v1
+        ports:
+        - containerPort: 8501
+

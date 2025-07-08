@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fruits-classifier-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: fruits-classifier-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8501
+
+
+
+# minikube service fruits-classifier-service
+# kubectl apply -f k8s/
